@@ -1,0 +1,30 @@
+.stars {
+  display: inline-block;
+  font-size: 24px;
+}
+
+.stars span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 4px;
+  background-color: #ddd;
+  border-radius: 50%;
+}
+
+.stars span.filled {
+  background-color: #ffc107;
+}
+
+.form-control-new:focus {
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.filled {
+  color: rgb(236, 236, 129);
+}
+
+.filled-mean {
+  color: rgb(231, 231, 53);
+}
