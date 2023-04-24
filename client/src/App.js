@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+//product rate
+import AddProductRate from "./components/AddProductRate";
+import ProductRate from "./components/ProductRates";
+
+//filtered rates
+import Product2FilteredRateProduct2FilteredRate from "./components/Product2FilteredRate";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/addproductRate" element={<AddProductRate />}></Route>
+        <Route path="/ProductRates" element={<ProductRate />}></Route>
+
+        <Route
+          path="/product2rates"
+          element={<Product2FilteredRateProduct2FilteredRate />}
+        ></Route>
+       
+      </Routes>
+    </Router>
   );
 }
 
