@@ -1,0 +1,44 @@
+.alignLine {
+  display: flex;
+  align-items: center;
+}
+
+.wrap-input200 {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 27px;
+  position: relative;
+  z-index: 1;
+}
+
+.input200 {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  color: #1b3815;
+  line-height: 1.2;
+
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 55px;
+  background: #ebebeb;
+  border-radius: 27px;
+  padding: 0 35px 0 35px;
+}
+
+.floatchild {
+  float: left;
+  width: 50%;
+}
+.rightfloat {
+  margin-left: -50%;
+  /* height: 100px;  */
+}
+.floatchildseller {
+  float: left;
+}
+.rightfloatseller {
+  margin-left: 10%;
+  margin-right: -5%;
+}

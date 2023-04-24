@@ -72,7 +72,6 @@ export default function AdminSignin() {
               <button className="login100-form-btn">Log in</button>
               <br></br>
             </div>
-
             <br></br>
           </form>
         </div>
