@@ -1,35 +1,27 @@
-//order model
-
 const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const OrderSchema = new Schema({
-  CustomerName: {
+const SellerRateSchema = new Schema({
+  customerName: {
     type: String,
     required: true,
   },
 
-  ProductName: {
+  sellerName: {
     type: String,
     required: true,
-    unique: true,
   },
 
-  quantity: {
+  rate: {
     type: Number,
     required: true,
   },
 
-  orderDate: {
-    type: String,
-    required: true,
-  },
-
-  status: {
+  comment: {
     type: String,
     required: true,
   },
 });
 
-module.exports = Order = mongoose.model("order", OrderSchema);
+module.exports = SellerRate = mongoose.model("sellerRate", SellerRateSchema);
