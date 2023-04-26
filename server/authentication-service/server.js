@@ -24,7 +24,6 @@ const PORT = process.env.PORT || 8080;
 
 app.use(bodyParser.json());
 
-
 const URL = process.env.MONGODB_URL;
 
 mongoose.connect(URL, () => {

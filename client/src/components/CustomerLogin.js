@@ -4,24 +4,29 @@ import axios from "axios";
 import "../css/customerLogin.css";
 import "../css/cusLoginUtil.css";
 
-export default function AdminSignin() {
-  const navigate = useNavigate(); // use navigate instead of history
+export default function CustomerLogin() {
+  const history = useNavigate();
 
-  const [AdminEmail, setAdminEmail] = useState("");
-  const [AdminPassword, setAdminPassword] = useState("");
+  const [CusUsername, setCusUsername] = useState("");
+  const [CusPassword, setCusPassword] = useState("");
 
   function sendData(e) {
     e.preventDefault();
     const newLogin = {
-      email: AdminEmail,
-      password: AdminPassword,
+      CusUsername,
+      CusPassword,
     };
 
     //send http request
-    axios.post("http://localhost:8080/admin/login", newLogin).then((resp) => {
-      //alert("Login Successful");
-      navigate("/adminPage"); // navigate to new page upon successful login
-    });
+    axios
+      .post("http://localhost:8050/customer/login", newLogin)
+      .then(() => {
+        alert("Login Successful");
+        history("/cusprofile");
+      })
+      .catch((err) => {
+        alert(err);
+      });
   }
 
   return (
@@ -32,7 +37,7 @@ export default function AdminSignin() {
             onSubmit={sendData}
             className="login100-form validate-form p-l-55 p-r-55 p-t-178"
           >
-            <span className="login100-form-title">Admin Sign In</span>
+            <span className="login100-form-title">Customer Sign In</span>
 
             <div
               className="wrap-input100 validate-input m-b-16"
@@ -42,9 +47,9 @@ export default function AdminSignin() {
                 className="input100"
                 type="text"
                 name="username"
-                placeholder="Email"
+                placeholder="Username"
                 onChange={(e) => {
-                  setAdminEmail(e.target.value);
+                  setCusUsername(e.target.value);
                 }}
               />
               <span className="focus-input100"></span>
@@ -60,19 +65,31 @@ export default function AdminSignin() {
                 name="pass"
                 placeholder="Password"
                 onChange={(e) => {
-                  setAdminPassword(e.target.value);
+                  setCusPassword(e.target.value);
                 }}
               />
               <span className="focus-input100"></span>
             </div>
 
-            <br></br>
-            <div className="container-login100-form-btn">
-              <br></br>
-              <button className="login100-form-btn">Log in</button>
-              <br></br>
+            <div className="text-right p-t-13 p-b-23">
+              <span className="txt1">Forgot</span>
+
+              <Link to="#" className="txt2">
+                Username / Password?
+              </Link>
             </div>
-            <br></br>
+
+            <div className="container-login100-form-btn">
+              <button className="login100-form-btn">Sign in</button>
+            </div>
+
+            <div className="flex-col-c p-t-100 p-b-40">
+              <span className="txt1 p-b-9">Don’t have an account?</span>
+
+              <Link to="#" className="txt3">
+                Sign up now
+              </Link>
+            </div>
           </form>
         </div>
       </div>
