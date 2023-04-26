@@ -3,8 +3,8 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
-const dotenv = require("dotenv");
-const connectDB = require("./Config/db");
+// const dotenv = require("dotenv");
+// const connectDB = require("./Config/db");
 const app = express();
 require("dotenv").config();
 app.use(express.json());
@@ -13,9 +13,6 @@ app.use(cookieParser());
 app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
 app.use(bodyParser.json());
 
-//admin route
-const admin_router = require("./Routes/admin-route");
-app.use("/admin", admin_router);
 
 const PORT = process.env.PORT || 8060;
 
