@@ -10,6 +10,18 @@ import SellerSignup from "./components/SellerSignup";
 import CustomerProfile from "./components/CustomerProfile";
 import SellerProfile from "./components/SellerProfile";
 
+
+
+
+
+import AddProduct from "./components/AddProduct";
+import ViewProduct from "./components/ViewProduct";
+import UpdateProduct from "./components/UpdateProduct";
+import ClientProduct from "./components/ClientProduct";
+import SingleProduct from "./components/SingleProduct";
+
+
+
 //admin
 import AdminSignup from "./components/AdminSignup";
 import AdminSignin from "./components/AdminSignin";
@@ -31,6 +43,7 @@ function App() {
 
   return (
     <Router>
+      
       <Routes>
         <Route path="/login" element={<CustomerLogin />}></Route>
         <Route path="/signup" element={<CustomerSignup />}></Route>
@@ -52,9 +65,25 @@ function App() {
           element={<Product2FilteredRateProduct2FilteredRate />}
         ></Route>
         <Route path="/sellerRate" element={<SellerFilteredRate />}></Route>
+       
 
         <Route path="/cusprofile" element={<CustomerProfile />}></Route>
         <Route path="/selprofile" element={<SellerProfile />}></Route>
+        
+
+        <Route path="/addP" element={<AddProduct/>}></Route>
+        <Route path="/viewP" element={<ViewProduct/>}></Route>
+        <Route path="/updateP" element={<UpdateProduct/>}></Route>
+        <Route path="/clientP" element={<ClientProduct/>}></Route>
+        <Route path="/singleP" element={<SingleProduct/>}></Route>
+
+        
+
+        <Route path="/addP" element={<AddProduct />}></Route>
+
+  
+
+      
       </Routes>
     </Router>
   );
