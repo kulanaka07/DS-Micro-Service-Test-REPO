@@ -8,11 +8,20 @@ const app = express();
 require("dotenv").config();
 app.use(express.json());
 app.use(cookieParser());
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    credentials: true,
+  })
+);
 
-app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
+//admin route
+const admin_router = require("./Routes/admin-route");
+app.use("/admin", admin_router);
+
+const PORT = process.env.PORT || 8080;
+
 app.use(bodyParser.json());
-
-const PORT = process.env.PORT || 8070;
 
 const URL = process.env.MONGODB_URL;
 
@@ -28,9 +37,6 @@ const connection = mongoose.connection;
 connection.once("open", () => {
   console.log("MongoDB connection establishment is successful!!!");
 });
-
-const customerRouter = require("./Routes/customer-route");
-app.use("/customer", customerRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is up and running on port: ${PORT}`);
