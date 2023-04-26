@@ -28,7 +28,7 @@ export default function AddProduct() {
     }
     console.log(newProduct);
     //send http request
-    axios.post("http://localhost:8070/product/addProduct",newProduct).then(()=>{
+    axios.post("http://localhost:8060/product/addProduct",newProduct).then(()=>{
         alert("New Product added");
         // history("/login");
     }).catch((err)=>{
