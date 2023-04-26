@@ -5,13 +5,13 @@ import '../css/productView.css';
 import { confirmAlert } from 'react-confirm-alert'; 
 import 'react-confirm-alert/src/react-confirm-alert.css'; 
 
-export default function productView() {
+export default function ViewProduct() {
 
 	const [product, setProduct] = useState([]);
 
 
 	useEffect(() => {
-		Axios.get('http://localhost:8070/product/products')
+		Axios.get('http://localhost:8060/product/products')
 			.then((getPro) => {
 				setProduct(getPro.data);
 			})
@@ -31,7 +31,7 @@ export default function productView() {
 	}
 
 	const onDelete = (_id) => {
-		Axios.delete("http://localhost:8070/product/deleteProduct/" + _id)
+		Axios.delete("http://localhost:8060/product/deleteProduct/" + _id)
 			.then(() => {
 				alert("Product Deleted");
 				window.location.reload();
