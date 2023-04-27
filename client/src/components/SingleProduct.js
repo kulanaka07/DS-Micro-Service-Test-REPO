@@ -1,8 +1,15 @@
 import React , {useState,useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 import axios from "axios";
 import { Link, useNavigate } from 'react-router-dom';
 
-export default function SingleProduct() {
+
+//has imported actions.
+import {getProductDetails} from '../redux/actions/productActions';
+import {addToCart} from '../redux/actions/cartAction';
+
+//Kulanaka edited the parameters.
+export default function SingleProduct({match, history}) {
 
     const navigate = useNavigate();
     const [ID , setID] = useState(null);
@@ -14,6 +21,15 @@ export default function SingleProduct() {
     const [size, setProSize] = useState('');
     const [productDescription, setProDescrip] = useState('');
 
+
+    //kulanaka edited
+    //initially the use state is one.
+    const [qty, setQuantity] = useState(1);
+    const dispatch = useDispatch();
+
+    const productDetails = useSelector(state => state.getProductDetails);
+    const {loading, error, product} = productDetails;
+
     useEffect(()=>{
         setID(localStorage.getItem('ID'));
         setProID(localStorage.getItem('productID'));
@@ -24,10 +40,12 @@ export default function SingleProduct() {
         setProSize(localStorage.getItem('size'));
         setProDescrip(localStorage.getItem('productDescription'));
 
-    },[]);
+        if(product && ID
+             != product._id){
+            dispatch(getProductDetails(match.params.id))
+        }
 
-	
-    
+    },[dispatch, product, match]);
 
 
 return (
@@ -63,7 +81,13 @@ return (
                                 <div class="sizes mt-5">
                                 
                                 </div>
-                                <div class="cart mt-4 align-items-center"> <button class="btn btn-danger text-uppercase mr-2 px-4">Add to cart</button> <i class="fa fa-heart text-muted"></i> <i class="fa fa-share-alt text-muted"></i> </div>
+                                <div class="cart mt-4 align-items-center"> 
+                                    <Link to={"/cart"}>
+                                        <button class="btn btn-danger text-uppercase mr-2 px-4">
+                                            Add to cart
+                                        </button> <i class="fa fa-heart text-muted"></i> <i class="fa fa-share-alt text-muted"></i> 
+                                    </Link>
+                                </div>
                             </div>
                         </div>
                     </div>

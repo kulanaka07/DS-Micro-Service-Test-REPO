@@ -38,11 +38,25 @@ import SellerFilteredRate from "./components/SellerFilteredRate";
 //seller rate
 import AddSellerRate from "./components/AddSellerRate";
 
+
+// cart and delivery
+import CartPage from "./components/CartPage";
+import NavBar from "./components/NavBar";
+import BackDrop from "./components/BackDrop";
+import SideDrawer from "./components/SideDrawer";
+import PayDeliver from "./components/PayDeliver";
+import ConfirmPurchase from "./components/ConfirmPurchase";
+
+
 function App() {
   const [sideToggle, setSideToggle] = useState(false);
 
   return (
     <Router>
+
+      <NavBar click={() => setSideToggle(true)} />
+      <BackDrop show={sideToggle} click={() => setSideToggle(false)} />
+      <SideDrawer show={sideToggle} click={() => setSideToggle(false)} />
       
       <Routes>
         <Route path="/login" element={<CustomerLogin />}></Route>
@@ -81,9 +95,13 @@ function App() {
 
         <Route path="/addP" element={<AddProduct />}></Route>
 
-  
 
-      
+        {/* Adding routes for cart and delivery payment components.*/}
+        <Route exact path="/cart" element={<><CartPage/></>}></Route>
+        <Route exact path="/cart/:id" element={<><CartPage/></>}></Route>
+        <Route path="/pay" element={<PayDeliver />}></Route>
+        <Route path="/confirmpay" element={<ConfirmPurchase />}></Route>
+        <Route path="/singleP/:id" element={<ConfirmPurchase />}></Route>      
       </Routes>
     </Router>
   );
