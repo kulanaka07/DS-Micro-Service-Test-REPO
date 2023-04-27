@@ -16,6 +16,22 @@ services:
     networks:
       - mern-network
 
+  auth:
+    image: authserv
+    container_name: auth
+    ports:
+      - "8080:8080"
+    networks:
+      - mern-network
+
+  inventory:
+    image: inventoryserv
+    container_name: inventory
+    ports:
+      - "8060:8060"
+    networks:
+      - mern-network
+
 networks:
   mern-network:
     driver: bridge
