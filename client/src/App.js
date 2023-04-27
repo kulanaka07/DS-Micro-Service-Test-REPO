@@ -27,6 +27,15 @@ import UpdateProduct from "./components/UpdateProduct";
 import SellerLogin from "./components/SellerLogin";
 import SellerSignup from "./components/SellerSignup";
 
+import BackDrop from './components/BackDrop';
+import CartItem from './components/CartItem';
+import CartPage from './components/CartPage'
+import ConfirmPurchase from './components/ConfirmPurchase';
+import EmailSend from './components/EmailSend';
+import NavBar from './components/NavBar';
+import PayDeliver from './components/PayDeliver';
+import SideDrawer from './components/SideDrawer';
+
 
 function App() {
   return (

@@ -37,6 +37,14 @@ services:
     networks:
       - mern-network
 
+  payment:
+    image: paymentserve
+    container_name: payment
+    ports:
+      - "9000:9000"
+    networks:
+      - mern-network
+
 networks:
   mern-network:
     driver: bridge

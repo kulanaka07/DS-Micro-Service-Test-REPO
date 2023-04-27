@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import SellerFilteredRate from "./SellerFilteredRate";
+import AddProductRate from "./AddProductRate";
 
 export default function SingleProduct() {
   const navigate = useNavigate();
@@ -97,7 +98,7 @@ export default function SingleProduct() {
           </div>
         </div>
       </div>
-      <SellerFilteredRate />
+      <AddProductRate/>
     </div>
   );
 }

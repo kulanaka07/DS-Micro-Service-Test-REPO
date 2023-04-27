@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import '../css/productView.css';
 import { confirmAlert } from 'react-confirm-alert'; 
 import 'react-confirm-alert/src/react-confirm-alert.css'; 
+import SellerFilteredRate from "./SellerFilteredRate";
 
 export default function ViewProduct() {
 
@@ -129,6 +130,7 @@ export default function ViewProduct() {
 						</div>
 					</div>
 				</div>
+				<SellerFilteredRate/>
 			</div>
 		</section>
 
