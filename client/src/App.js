@@ -15,13 +15,18 @@ import AdminSignup from "./components/AdminSignup";
 import AdminSignin from "./components/AdminSignin";
 import AdminPage from "./components/AdminPage";
 
-// import CustomerLogin from "./components/CustomerLogin";
-// import CustomerSignup from "./components/CustomerSignup";
-// import SellerLogin from "./components/SellerLogin";
-// import SellerSignup from "./components/SellerSignup";
-// import CustomerProfile from "./components/CustomerProfile";
-// import SellerProfile from "./components/SellerProfile";
-// import EmailSend from "./components/EmailSend";
+import CustomerLogin from "./components/CustomerLogin";
+import CustomerSignup from "./components/CustomerSignup";
+import CustomerProfile from "./components/CustomerProfile";
+import SellerProfile from "./components/SellerProfile";
+
+import ViewProduct from "./components/ViewProduct";
+import ClientProduct from "./components/ClientProduct";
+import SingleProduct from "./components/SingleProduct";
+import UpdateProduct from "./components/UpdateProduct";
+import SellerLogin from "./components/SellerLogin";
+import SellerSignup from "./components/SellerSignup";
+
 
 function App() {
   return (
@@ -43,16 +48,18 @@ function App() {
         <Route path="/adminLogin" element={<AdminSignin />}></Route>
         <Route path="/adminPage" element={<AdminPage />}></Route>
 
-        {/* <Route path="/login" element={<CustomerLogin />}></Route>
+        <Route path="/viewP" element={<ViewProduct />}></Route>
+        <Route path="/clientP" element={<ClientProduct />}></Route>
+        <Route path="/singleP" element={<SingleProduct />}></Route>
+        <Route path="/updateP" element={<UpdateProduct />}></Route>
+
+        <Route path="/login" element={<CustomerLogin />}></Route>
         <Route path="/signup" element={<CustomerSignup />}></Route>
         <Route path="/cusprofile" element={<CustomerProfile />}></Route>
-        <Route path="/selprofile" element={<SellerProfile />}></Route> */}
+        <Route path="/selprofile" element={<SellerProfile />}></Route>
 
-        {/* <Route path="/slogin" element={<SellerLogin />}></Route>
-        <Route path="/ssignup" element={<SellerSignup />}></Route>
-        <Route path="/email" element={<EmailSend />}></Route>
         <Route path="/slogin" element={<SellerLogin />}></Route>
-        <Route path="/ssignup" element={<SellerSignup />}></Route> */}
+        <Route path="/ssignup" element={<SellerSignup />}></Route>
       </Routes>
     </Router>
   );

@@ -15,17 +15,22 @@ services:
       - "8070:8070"
     networks:
       - mern-network
-
+  user:
+    image: userserv
+    container_name: user
+    ports:
+      - "8050:8050"
+    networks:
+      - mern-network
   auth:
-    image: authserv
+    image: authserve
     container_name: auth
     ports:
       - "8080:8080"
     networks:
       - mern-network
-
   inventory:
-    image: inventoryserv
+    image: inventoryserve
     container_name: inventory
     ports:
       - "8060:8060"
