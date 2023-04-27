@@ -1,0 +1,96 @@
+.navBar {
+    width: 100%;
+    height: 70px;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    z-index: 50;
+}
+
+.navBar__logo h2 {
+    color: white;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.navBar__links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.navBar__links > li {
+    padding-left: 1.5rem;
+}
+
+.navBar__links > li > a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.navBar__links > li > a > span {
+    display: flex;
+    align-items: center;
+    margin-left: 8px;
+
+}
+
+.cart__link {
+    background: #7a7a7a;
+    padding: 7px;
+    border-radius: 20px;
+}
+
+.cart__link:hover {
+    background: #5a5a5a;
+}
+
+.cartLogo__badge {
+    width: 30px;
+    height: 30px;
+    background: white;
+    border-radius: 50%;
+    margin-left: 8px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.navBar__hambuger-menu {
+    width: 30px;
+    height: 30px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.navBar__hambuger-menu > div {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+}
+
+.navBar__hambuger-menu:hover > div {
+    background: #5a5a5a;
+}
+
+
+@media (max-width: 960px){
+    .navBar__links{
+        display: none;
+    }
+
+    .navBar__hambuger-menu{
+        display: flex;
+    }
+}
