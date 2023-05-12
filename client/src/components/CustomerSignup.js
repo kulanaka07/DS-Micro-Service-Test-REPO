@@ -147,7 +147,7 @@ export default function CustomerSignup() {
             <div className="flex-col-c p-t-35 p-b-40">
               <span className="txt1 p-b-9">Already have an account?</span>
 
-              <Link to="#" className="txt3">
+              <Link to="/login" className="txt3">
                 Login now
               </Link>
             </div>
